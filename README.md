@@ -1,10 +1,11 @@
-# pingpong-socket
-
+# Trabalho 1 programa Ping Pong
+O cliente enviará uma mensagem ping a um servidor e receberá uma mensagem pong correspondente de volta do servidor e o progarama determinará o atraso entre o
+momento em que o cliente enviou e recebeu a mensagem. O programa está na linguagem python e mostrará dois protocolos: o UDP e o TCP.
 ## UDP
 
 
-### Cliente
-### Código do cliente UDP
+- ### Cliente
+Código do cliente UDP
 ```python
 import socket
 import time
@@ -49,25 +50,28 @@ for i in range(1, 11):
 # Fecha o socket após terminar os envios
 client_socket.close()
 ```
+Resposta do Cliente:  
+
+
 <img src="https://i.postimg.cc/J0y404CN/Captura-de-tela-2025-05-20-171640.png" alt="pingpong" width="600">
 
 
-Servidor
+- ### Servidor
 
 
 <img src="https://i.postimg.cc/4yWG6Yp7/Captura-de-tela-2025-05-20-171702.png" alt="pingpong" width="600">
 
-### TCP
+## TCP
 
 
- Cliente
+- ### Cliente
 
  
  <img src="https://i.postimg.cc/DfYSTR3Q/Captura-de-tela-2025-05-20-171534.png" alt="pingpong" width="500">
 
  
- Servidor
-### Código do servidor TCP
+- ### Servidor
+Código do servidor TCP:
 ```python
 import socket  # Biblioteca para sockets
 
@@ -117,5 +121,7 @@ except Exception as e:
 connection.close()
 print("Servidor encerrado.")
 ```
- 
+Resposta do Servidor:  
+
+
 <img src="https://i.postimg.cc/QCypRthv/Captura-de-tela-2025-05-20-171534.png" alt="pingpong" width="500">
