@@ -56,7 +56,7 @@ client_socket.close()
 Resposta do Cliente:  
 
 
-<img src="https://i.postimg.cc/J0y404CN/Captura-de-tela-2025-05-20-171640.png" alt="pingpong" width="600">
+<img src="https://i.postimg.cc/3J0DrHhC/Captura-de-tela-2025-06-09-195514.png" alt="pingpong" width="600">
 
 
 - ### Servidor ⚙️
