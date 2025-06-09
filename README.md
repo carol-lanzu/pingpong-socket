@@ -130,7 +130,7 @@ Resposta do Servidor:
 <img src="https://i.postimg.cc/QCypRthv/Captura-de-tela-2025-05-20-171534.png" alt="pingpong" width="500">
 
 ## 📊 Conclusão dos testes dos programas
-### UDP:
+### 🙋‍♀️UDP:
 
 - Envia **rapidamente** os pacotes.
 
@@ -140,7 +140,7 @@ Resposta do Servidor:
 
 - É útil para testes simples, mas exige mais cuidado com perdas.
 
-### TCP:
+### 🔒TCP:
 
 - Garante a entrega de cada mensagem ping.
 
