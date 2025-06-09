@@ -60,14 +60,103 @@ Resposta do Cliente:
 
 
 - ### Servidor ⚙️
+Código do servidor UDP
+```python
+import socket
+
+# Define o endereço IP e a porta em que o servidor escutará
+server_address = ('200.135.87.59', 12000)  # Escuta em todas as interfaces de rede, na porta 12000
+
+# Cria o socket UDP
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+# Associa o socket ao endereço e porta definidos
+server_socket.bind(server_address)
+
+print("Servidor UDP aguardando mensagens...")
+
+# Loop infinito para atender requisições continuamente
+while True:
+    # Aguarda receber dados do cliente
+    data, client_address = server_socket.recvfrom(1024)  # Recebe até 1024 bytes
+
+# Decodifica os dados recebidos
+message = data.decode()
+
+# Imprime a mensagem recebida para depuração
+print(f"Recebido de {client_address}: {message}")
+
+# Cria a resposta tipo "pong", pode incluir a mesma mensagem ou apenas um OK
+response = f"Pong: {message}"
+
+# Envia a resposta de volta ao cliente
+server_socket.sendto(response.encode(), client_address)
+```
+Resposta do Servidor:
 
 
 <img src="https://i.postimg.cc/4yWG6Yp7/Captura-de-tela-2025-05-20-171702.png" alt="pingpong" width="600">
+
 
 ## TCP 🔒
 
 
 - ### Cliente 🙋‍♀️
+Código do cliente TCP:
+```python
+import socket      # Biblioteca para comunicação de rede
+import time        # Para medir o tempo (RTT)
+
+# Endereço e porta do servidor TCP
+server_address = ('200.135.66.17', 12000)  # Altere o IP se necessário
+
+try:
+    # Cria um socket TCP (SOCK_STREAM)
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    # Define o tempo máximo de espera por resposta como 1 segundo
+    client_socket.settimeout(1)
+
+    # Conecta ao servidor
+    client_socket.connect(server_address)
+    print("Conectado ao servidor TCP.\n")
+
+    # Envia 10 mensagens ping numeradas
+    for i in range(1, 11):
+        # Cria a mensagem com número e timestamp
+        mensagem = f"Ping {i} {time.time()}"
+
+        try:
+            # Marca o tempo de envio
+            start_time = time.time()
+
+            # Envia a mensagem ao servidor
+            client_socket.send(mensagem.encode())
+
+            # Tenta receber a resposta (até 1024 bytes)
+            resposta = client_socket.recv(1024)
+
+            # Marca o tempo de recebimento
+            end_time = time.time()
+
+            # Calcula o RTT
+            rtt = end_time - start_time
+
+            # Exibe a resposta e o RTT
+            print(f"Resposta: {resposta.decode()} | RTT: {rtt:.6f} segundos")
+
+        except socket.timeout:
+            # Caso nenhuma resposta seja recebida em 1 segundo
+            print(f"Ping {i} - Tempo esgotado. Pacote perdido.")
+
+    # Encerra o socket ao final
+    client_socket.close()
+    print("\nConexão encerrada.")
+
+except Exception as e:
+    print("Erro ao conectar ao servidor:", e)
+```
+Resposta do Cliente:
 
  
  <img src="https://i.postimg.cc/DfYSTR3Q/Captura-de-tela-2025-05-20-171534.png" alt="pingpong" width="500">
