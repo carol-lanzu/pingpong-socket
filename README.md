@@ -130,22 +130,22 @@ Resposta do Servidor:
 <img src="https://i.postimg.cc/QCypRthv/Captura-de-tela-2025-05-20-171534.png" alt="pingpong" width="500">
 
 ## 📊 Conclusão dos testes dos programas
-- UDP:
+### UDP:
 
-Envia rapidamente os pacotes.
+- Envia **rapidamente** os pacotes.
 
-Pode perder pacotes, especialmente em redes instáveis.
+- Pode **perder pacotes**, especialmente em redes instáveis.
 
-Não garante ordem ou entrega.
+- Não garante ordem ou entrega.
 
-É útil para testes simples, mas exige mais cuidado com perdas.
+- É útil para testes simples, mas exige mais cuidado com perdas.
 
-- TCP:
+### TCP:
 
-Garante a entrega de cada mensagem ping.
+- Garante a entrega de cada mensagem ping.
 
-Mesmo que a rede tenha atrasos, os pacotes chegam com segurança.
+- Mesmo que a rede tenha atrasos, os pacotes chegam com segurança.
 
-O RTT tende a ser levemente maior devido ao controle de confiabilidade.
+- O RTT tende a ser **levemente maior** devido ao controle de **confiabilidade**.
 
-Ideal quando não se pode perder pacotes, mesmo com um pouco mais de latência.
+- Ideal quando não se pode perder pacotes, mesmo com um pouco mais de latência.
