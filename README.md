@@ -56,7 +56,7 @@ client_socket.close()
 Resposta do Cliente:  
 
 
-<img src="https://i.postimg.cc/3J0DrHhC/Captura-de-tela-2025-06-09-195514.png" alt="pingpong" width="600">
+<img src="https://i.postimg.cc/52FPVGBj/Captura-de-tela-2025-06-10-151011.png" alt="pingpong" width="600">
 
 
 - ### Servidor ⚙️
@@ -95,7 +95,7 @@ server_socket.sendto(response.encode(), client_address)
 Resposta do Servidor:
 
 
-<img src="https://i.postimg.cc/4yWG6Yp7/Captura-de-tela-2025-05-20-171702.png" alt="pingpong" width="600">
+<img src="https://i.postimg.cc/4d4bmF96/Imagem-do-Whats-App-de-2025-06-10-s-15-11-41-e360b582.jpg" alt="pingpong" width="600">
 
 
 ## TCP 🔒
@@ -159,7 +159,7 @@ except Exception as e:
 Resposta do Cliente:
 
  
- <img src="https://i.postimg.cc/DfYSTR3Q/Captura-de-tela-2025-05-20-171534.png" alt="pingpong" width="500">
+ <img src="https://i.postimg.cc/mZJ6hCbP/Imagem-do-Whats-App-de-2025-06-10-s-15-14-09-0e9ce333.jpg" alt="pingpong" width="500">
 
  
 - ### Servidor ⚙️
@@ -216,9 +216,14 @@ print("Servidor encerrado.")
 Resposta do Servidor:  
 
 
-<img src="https://i.postimg.cc/QCypRthv/Captura-de-tela-2025-05-20-171534.png" alt="pingpong" width="500">
+<img src="https://i.postimg.cc/SRTZSb1Y/Captura-de-tela-2025-06-10-151541.png" alt="pingpong" width="500">
 
 ## 📊 Conclusão dos testes dos programas
+|     UPD           |       TCP     | 
+| ---------------   | ------------- |
+| MAX: 0.014124 seg | MAX: 0.017595 seg |
+
+
 ### 🙋‍♀️UDP:
 
 - Envia **rapidamente** os pacotes.
