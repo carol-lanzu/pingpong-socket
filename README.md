@@ -14,7 +14,7 @@ import socket
 import time
 
 # Define o endereço e a porta do servidor
-server_address = ('200.135.87.59', 12000)  # Altere para o IP/porta do servidor, se necessário
+server_address = ('200.135.86.234', 12000)  # Altere para o IP/porta do servidor, se necessário
 
 # Cria o socket UDP
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -65,7 +65,7 @@ Código do servidor UDP
 import socket
 
 # Define o endereço IP e a porta em que o servidor escutará
-server_address = ('200.135.87.59', 12000)  # Escuta em todas as interfaces de rede, na porta 12000
+server_address = ('200.135.86.234', 12000)  # Escuta em todas as interfaces de rede, na porta 12000
 
 # Cria o socket UDP
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -108,7 +108,7 @@ import socket      # Biblioteca para comunicação de rede
 import time        # Para medir o tempo (RTT)
 
 # Endereço e porta do servidor TCP
-server_address = ('200.135.66.17', 12000)  # Altere o IP se necessário
+server_address = ('200.135.66.247', 12000)  # Altere o IP se necessário
 
 try:
     # Cria um socket TCP (SOCK_STREAM)
@@ -168,7 +168,7 @@ Código do servidor TCP:
 import socket  # Biblioteca para sockets
 
 # Define o endereço e a porta onde o servidor vai escutar
-server_address = ('200.135.66.17', 12000)  # '0.0.0.0' aceita conexões de qualquer IP na porta 12000
+server_address = ('200.135.66.247', 12000)  # '0.0.0.0' aceita conexões de qualquer IP na porta 12000
 
 # Cria o socket TCP
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
