@@ -1,6 +1,6 @@
 # Trabalho 1 programa Ping Pong
 ### Alunas: Alice Motin e Caroline Lanzuolo 
-### Disciplina: Redes
+### Disciplina: Redes de Computadores
 ### Professora: Analúcia Morales
 
 O cliente enviará uma mensagem ping a um servidor e receberá uma mensagem pong correspondente de volta do servidor e o progarama determinará o atraso entre o
