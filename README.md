@@ -1,4 +1,4 @@
-# Trabalho 1 programa Ping Pong
+# Trabalho 1 Programa Ping Pong
 ### Alunas: Alice Motin e Caroline Lanzuolo 
 ### Disciplina: Redes de Computadores
 ### Professora: Analúcia Morales
