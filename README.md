@@ -10,6 +10,44 @@ momento em que o cliente enviou e recebeu a mensagem. O programa está na lingua
 
 ## UDP 🚀
 
+- ### Servidor ⚙️
+Código do servidor UDP
+```python
+import socket
+
+# Define o endereço IP e a porta em que o servidor escutará
+server_address = ('200.135.86.234', 12000)  # Escuta em todas as interfaces de rede, na porta 12000
+
+# Cria o socket UDP
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+# Associa o socket ao endereço e porta definidos
+server_socket.bind(server_address)
+
+print("Servidor UDP aguardando mensagens...")
+
+# Loop infinito para atender requisições continuamente
+while True:
+    # Aguarda receber dados do cliente
+    data, client_address = server_socket.recvfrom(1024)  # Recebe até 1024 bytes
+
+# Decodifica os dados recebidos
+message = data.decode()
+
+# Imprime a mensagem recebida para depuração
+print(f"Recebido de {client_address}: {message}")
+
+# Cria a resposta tipo "pong", pode incluir a mesma mensagem ou apenas um OK
+response = f"Pong: {message}"
+
+# Envia a resposta de volta ao cliente
+server_socket.sendto(response.encode(), client_address)
+```
+Resposta do Servidor:
+
+
+<img src="https://i.postimg.cc/4d4bmF96/Imagem-do-Whats-App-de-2025-06-10-s-15-11-41-e360b582.jpg" alt="pingpong" width="600">
+
 
 - ### Cliente🙋‍♀️
 Código do cliente UDP
@@ -61,45 +99,6 @@ Resposta do Cliente:
 
 
 <img src="https://i.postimg.cc/52FPVGBj/Captura-de-tela-2025-06-10-151011.png" alt="pingpong" width="600">
-
-
-- ### Servidor ⚙️
-Código do servidor UDP
-```python
-import socket
-
-# Define o endereço IP e a porta em que o servidor escutará
-server_address = ('200.135.86.234', 12000)  # Escuta em todas as interfaces de rede, na porta 12000
-
-# Cria o socket UDP
-server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-# Associa o socket ao endereço e porta definidos
-server_socket.bind(server_address)
-
-print("Servidor UDP aguardando mensagens...")
-
-# Loop infinito para atender requisições continuamente
-while True:
-    # Aguarda receber dados do cliente
-    data, client_address = server_socket.recvfrom(1024)  # Recebe até 1024 bytes
-
-# Decodifica os dados recebidos
-message = data.decode()
-
-# Imprime a mensagem recebida para depuração
-print(f"Recebido de {client_address}: {message}")
-
-# Cria a resposta tipo "pong", pode incluir a mesma mensagem ou apenas um OK
-response = f"Pong: {message}"
-
-# Envia a resposta de volta ao cliente
-server_socket.sendto(response.encode(), client_address)
-```
-Resposta do Servidor:
-
-
-<img src="https://i.postimg.cc/4d4bmF96/Imagem-do-Whats-App-de-2025-06-10-s-15-11-41-e360b582.jpg" alt="pingpong" width="600">
 
 
 ## TCP 🔒
