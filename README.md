@@ -1,4 +1,8 @@
 # Trabalho 1 programa Ping Pong
+### Alunas: Alice Motin e Caroline Lanzuolo 
+### Disciplina: Redes
+### Professora: Analúcia Morales
+
 O cliente enviará uma mensagem ping a um servidor e receberá uma mensagem pong correspondente de volta do servidor e o progarama determinará o atraso entre o
 momento em que o cliente enviou e recebeu a mensagem. O programa está na linguagem python e mostrará dois protocolos: o UDP e o TCP.
 
