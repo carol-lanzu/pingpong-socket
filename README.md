@@ -103,6 +103,63 @@ Resposta do Cliente:
 
 ## TCP 🔒
 
+ 
+- ### Servidor ⚙️
+Código do servidor TCP:
+```python
+import socket  # Biblioteca para sockets
+
+# Define o endereço e a porta onde o servidor vai escutar
+server_address = ('200.135.66.247', 12000)  # '0.0.0.0' aceita conexões de qualquer IP na porta 12000
+
+# Cria o socket TCP
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Liga o socket ao endereço e porta
+server_socket.bind(server_address)
+
+# Coloca o socket em modo de escuta (fila de até 1 conexão)
+server_socket.listen(1)
+
+print("Servidor TCP pronto e aguardando conexão...")
+
+# Aceita uma conexão do cliente
+connection, client_address = server_socket.accept()
+print(f"Conexão estabelecida com {client_address}")
+
+# Loop para receber múltiplas mensagens do cliente
+try:
+    while True:
+        # Recebe até 1024 bytes de dados
+        dados = connection.recv(1024)
+
+        # Se não recebeu nada, o cliente fechou a conexão
+        if not dados:
+            print("Conexão encerrada pelo cliente.")
+            break
+
+        # Decodifica a mensagem recebida
+        mensagem = dados.decode()
+        print(f"Recebido: {mensagem}")
+
+        # Cria a resposta "pong"
+        resposta = f"Pong: {mensagem}"
+
+        # Envia a resposta de volta ao cliente
+        connection.send(resposta.encode())
+
+except Exception as e:
+    print("Erro durante a comunicação:", e)
+
+# Fecha a conexão com o cliente
+connection.close()
+print("Servidor encerrado.")
+```
+Resposta do Servidor:  
+
+
+<img src="https://i.postimg.cc/SRTZSb1Y/Captura-de-tela-2025-06-10-151541.png" alt="pingpong" width="500">
+
 
 - ### Cliente 🙋‍♀️
 Código do cliente TCP:
@@ -164,62 +221,6 @@ Resposta do Cliente:
  
  <img src="https://i.postimg.cc/mZJ6hCbP/Imagem-do-Whats-App-de-2025-06-10-s-15-14-09-0e9ce333.jpg" alt="pingpong" width="500">
 
- 
-- ### Servidor ⚙️
-Código do servidor TCP:
-```python
-import socket  # Biblioteca para sockets
-
-# Define o endereço e a porta onde o servidor vai escutar
-server_address = ('200.135.66.247', 12000)  # '0.0.0.0' aceita conexões de qualquer IP na porta 12000
-
-# Cria o socket TCP
-server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-# Liga o socket ao endereço e porta
-server_socket.bind(server_address)
-
-# Coloca o socket em modo de escuta (fila de até 1 conexão)
-server_socket.listen(1)
-
-print("Servidor TCP pronto e aguardando conexão...")
-
-# Aceita uma conexão do cliente
-connection, client_address = server_socket.accept()
-print(f"Conexão estabelecida com {client_address}")
-
-# Loop para receber múltiplas mensagens do cliente
-try:
-    while True:
-        # Recebe até 1024 bytes de dados
-        dados = connection.recv(1024)
-
-        # Se não recebeu nada, o cliente fechou a conexão
-        if not dados:
-            print("Conexão encerrada pelo cliente.")
-            break
-
-        # Decodifica a mensagem recebida
-        mensagem = dados.decode()
-        print(f"Recebido: {mensagem}")
-
-        # Cria a resposta "pong"
-        resposta = f"Pong: {mensagem}"
-
-        # Envia a resposta de volta ao cliente
-        connection.send(resposta.encode())
-
-except Exception as e:
-    print("Erro durante a comunicação:", e)
-
-# Fecha a conexão com o cliente
-connection.close()
-print("Servidor encerrado.")
-```
-Resposta do Servidor:  
-
-
-<img src="https://i.postimg.cc/SRTZSb1Y/Captura-de-tela-2025-06-10-151541.png" alt="pingpong" width="500">
 
 ## 📊 Conclusão dos testes dos programas
 |     UPD           |       TCP     | 
